@@ -16,6 +16,10 @@
 
 [踩坑笔记](https://gist.github.com/itxve/cbb94eb509bc8e98e71cc0457b3d4be8)
 
+### 灵感来源
+
+[https://github.com/W-Mai/BuZhiYin](https://github.com/W-Mai/BuZhiYin)
+
 # 免责声明
 
 ### 该软件仅用于个人学习使用
