@@ -27,7 +27,10 @@ jobs: #查询最近的 releaseId 返回
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const { data } = await github.rest.repos.getLatestRelease()
+            const { data } = await github.rest.repos.getLatestRelease({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+            })
             return data.id
 
   build-tauri:
