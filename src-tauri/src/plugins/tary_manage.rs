@@ -226,5 +226,6 @@ pub fn change_tary(app: AppHandle, buffer: GifData) {
 
 #[command]
 pub fn set_template_icon(app: AppHandle, template: bool) {
+  #[cfg(target_os = "macos")]
   let _ = app.tray_handle().set_icon_as_template(template);
 }
