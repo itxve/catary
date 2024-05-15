@@ -13,8 +13,7 @@ use app::{commands, config::AppConf, menu};
 use log::info;
 use tauri::Manager;
 
-#[tokio::main]
-async fn main() {
+fn main() {
   let context = tauri::generate_context!();
   let app = tauri::Builder::default();
   let _app_conf = AppConf::read().write();
