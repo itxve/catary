@@ -6,6 +6,12 @@
 
 ### 软件截图
 
+<p align="center">
+  <img src="./screenshot/image1.png" width="150" height="150" />
+  <img src="./screenshot/image3.png" width="150" height="150" />
+  <img src="./screenshot/image2.png"  />
+</p>
+
 ### TODOS
 
 ## ✨
@@ -19,11 +25,3 @@
 ### 灵感来源
 
 [https://github.com/W-Mai/BuZhiYin](https://github.com/W-Mai/BuZhiYin)
-
-# 免责声明
-
-### 该软件仅用于个人学习使用
-
-- 禁止商用或者非法用途.
-- 禁止商用或者非法用途.
-- 禁止商用或者非法用途.
