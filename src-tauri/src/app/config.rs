@@ -13,6 +13,7 @@ pub struct AppInfo {
   pub resource_dir: String,
   pub home_dir: String,
   pub current_gif: String,
+  pub os: String,
 }
 #[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct GIfItem {

@@ -20,14 +20,16 @@ pub fn app_info(app: AppHandle) -> config::AppInfo {
     home_dir: utils::app_root().to_string_lossy().into(),
     resource_dir: utils::resource_root(app),
     current_gif: conf.select.id,
+    os: std::env::consts::OS.to_owned(),
   }
 }
 
 #[tauri::command]
-pub fn add_image(item: config::GIfItem) {
+pub fn add_image(app: AppHandle, item: config::GIfItem) {
   let mut conf = AppConf::read();
   conf.items.insert(0, item.clone());
-  conf.select = item;
+  conf.select = item.clone();
+  set_current_gif(app, item);
   conf.write();
 }
 

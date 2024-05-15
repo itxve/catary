@@ -107,6 +107,8 @@ jobs: #查询最近的 releaseId 返回
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             github.rest.repos.updateRelease({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
               release_id: process.env.release_id,
               draft: false,
               prerelease: false

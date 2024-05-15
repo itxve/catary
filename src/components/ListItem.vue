@@ -13,7 +13,7 @@
 
 <script setup lang='ts'>
 import { ref, onMounted } from 'vue';
-import { useHomeFile, useObjectUrl } from '@/hooks';
+import { useHomeFile, useObjectUrl } from '@/composable';
 import cmds from '@/plugins/cmds';
 
 const props = defineProps(["id", "desc", "isCurrent"])

@@ -59,6 +59,7 @@ pub fn tray_handler(app: &AppHandle<Wry>, event: SystemTrayEvent) {
               .maximizable(false)
               .min_inner_size(500f64, 600f64)
               .max_inner_size(500f64, 600f64)
+              .enable_clipboard_access()
               .disable_file_drop_handler() // 不禁用会导致前端 drop事件不回调
               .build()
               .unwrap();

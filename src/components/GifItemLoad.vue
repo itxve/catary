@@ -1,8 +1,7 @@
 <template>
-  <div>
-    <button @click="() => showDialog(true)">添加</button>
-    <dialog ref="dialogRef" class="content">
-      <span class="close" @click="() => showDialog(false)" />
+  <div v-if="props.show" style=" position:fixed;  top: 10vh; left: 5vw ;z-index: 100;">
+    <dialog :open="props.show" class="content">
+      <span class="close" @click="() => emit('close')" />
       <div style="display: flex; flex-direction: row; margin-bottom: 32px">
         <DragFile :src="imageUrl" @file="fileChange" style="width: 100px" />
         <div>
@@ -20,17 +19,17 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, watchEffect } from "vue";
+import DragFile from "@/components/DragFile.vue";
+import { onMounted, ref } from "vue";
 import { loadBinaryFile } from "@/util";
 import { cmds } from "@/plugins";
 import { genId } from "@/util";
-import useHomeFile from "@/hooks/useHomeFile";
+import { useHomeFile } from "@/composable";
 
-const props = defineProps(["edit", "uid"]);
-const emit = defineEmits(["success"]);
+const props = defineProps(["edit", "uid", "show"]);
+const emit = defineEmits(["success", "close"]);
 
 const imageUrl = ref();
-const dialogRef = ref<HTMLDialogElement>();
 const fileRef = ref<ArrayBuffer>();
 const uidRef = ref();
 const descRef = ref();
@@ -44,11 +43,6 @@ onMounted(() => {
   }
 });
 
-const showDialog = (show: boolean) => {
-  if (dialogRef.value) {
-    show ? dialogRef.value.show() : dialogRef.value.close()
-  }
-}
 
 const fileChange = async (files: Array<File>) => {
   cmds.set_template_icon(false);
@@ -71,7 +65,6 @@ const saveImage = async () => {
   descRef.value = "";
   imageUrl.value = "";
   emit("success", true);
-  showDialog(false);
 };
 </script>
 

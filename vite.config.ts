@@ -2,8 +2,6 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import alias from "@rollup/plugin-alias";
 import { resolve } from "path";
-import Components from "unplugin-vue-components/vite";
-import { DevUiResolver } from "unplugin-vue-components/resolvers";
 
 import path from "path";
 
@@ -13,9 +11,6 @@ export default defineConfig({
     vue(),
     alias({
       entries: [{ find: "@", replacement: resolve("./src") }],
-    }), // 新增
-    Components({
-      resolvers: [DevUiResolver()],
     }),
   ],
   // Vite options tailored for Tauri development and only applied in `tauri dev` or `tauri build`

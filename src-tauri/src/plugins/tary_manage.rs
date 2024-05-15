@@ -178,22 +178,22 @@ pub fn cpu_usage() -> u64 {
 
 pub fn _play(app: AppHandle) {
   let app_run = app.clone();
-  let dt_state: State<Arc<Mutex<DTaryState>>> = app.state();
+  let dt_state = app.state::<Arc<Mutex<DTaryState>>>();
   dt_state.lock().unwrap().run(app_run);
 }
 
 pub fn _pause(app: AppHandle) {
-  let dt_state: State<Arc<Mutex<DTaryState>>> = app.state();
+  let dt_state = app.state::<Arc<Mutex<DTaryState>>>();
   dt_state.lock().unwrap().set_run(false);
 }
 
 pub fn _set_speed(app: AppHandle, speed: Duration) {
-  let dt_state: State<Arc<Mutex<DTaryState>>> = app.state();
+  let dt_state = app.state::<Arc<Mutex<DTaryState>>>();
   dt_state.lock().unwrap().set_speed(speed);
 }
 
 pub fn _change_tary(app: AppHandle, buffer: GifData) {
-  let dt_state: State<Arc<Mutex<DTaryState>>> = app.state();
+  let dt_state = app.state::<Arc<Mutex<DTaryState>>>();
   let _ = dt_state.lock().unwrap().set_gif(buffer);
   _play(app.clone());
 }

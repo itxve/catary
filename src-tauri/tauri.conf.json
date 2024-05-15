@@ -96,9 +96,22 @@
       "active": true,
       "dialog": false,
       "endpoints": [
-        "https://itxve.github.io/catary/install.json"
+        "https://github.com/itxve/catary/releases/latest/download/latest.json"
       ],
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEUwRDEyOEE2MTdFRjcwNzEKUldSeGNPOFhwaWpSNERML29rcVZ1Qjl0eWFBa3duWHVsMUlTVis0TURKRlQzM0V0MWNTNWcydUUK"
-    }
+    },
+    "windows": [
+      {
+        "url": "index.html",
+        "title": "设置",
+        "maximizable": false,
+        "minWidth": 500,
+        "maxWidth": 500,
+        "minHeight": 600,
+        "maxHeight": 600,
+        "fileDropEnabled": false,
+        "resizable": false
+      }
+    ]
   }
 }

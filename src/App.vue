@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { repository } from "../package.json";
 import Setting from "@/components/Setting.vue";
-
-
 </script>
 
 <template>

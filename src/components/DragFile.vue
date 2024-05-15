@@ -6,7 +6,7 @@
       @dragover="dragoverEvent" @dragleave="dragleaveEvent" @drop="dropEvent">
       <div v-if="!props.src">
         <span v-if="dragging">松开以放置</span>
-        <span v-else> gif图片</span>
+        <span v-else style="text-align: center;">选择/拖入gif图片</span>
       </div>
       <div v-else class="img-show">
         <img style="width: 80px;height: 80px; border-radius: 5px;" :src="props.src" alt="加载失败">
