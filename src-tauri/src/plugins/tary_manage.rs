@@ -36,16 +36,6 @@ fn find_max_dimensions(dimensions: &[(usize, usize)]) -> (usize, usize) {
   }
   (max_w, max_h)
 }
-fn resize_image(
-  image: &ImageBuffer<Rgba<u8>, Vec<u8>>,
-  scale: f32,
-) -> ImageBuffer<Rgba<u8>, Vec<u8>> {
-  // 计算新的尺寸
-  let (width, height) = image.dimensions();
-  let new_width = (width as f32 * scale).round() as u32;
-  let new_height = (height as f32 * scale).round() as u32;
-  imageops::resize(image, new_width, new_height, imageops::Nearest)
-}
 
 pub struct DTaryState {
   pub running: Arc<AtomicBool>,
@@ -60,17 +50,6 @@ impl DTaryState {
       tary_item: Arc::new(Mutex::new(TaryItem {
         speed: Duration::from_millis(cpu_usage()),
         data: GifData::File(path),
-      })),
-      join_handle: None,
-    }
-  }
-
-  pub fn from_raw(data: Vec<u8>) -> Self {
-    Self {
-      running: Arc::new(AtomicBool::new(false)),
-      tary_item: Arc::new(Mutex::new(TaryItem {
-        speed: Duration::from_millis(cpu_usage()),
-        data: GifData::Raw(data),
       })),
       join_handle: None,
     }
