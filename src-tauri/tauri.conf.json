@@ -26,8 +26,7 @@
         "removeDir": true,
         "scope": [
           "$APPDATA/*",
-          "$HOME/.catary/**",
-          "$RESOURCE/**"
+          "$HOME/.catary/**"
         ]
       },
       "dialog": {
@@ -59,9 +58,6 @@
         "icons/128x128@2x.png",
         "icons/icon.icns",
         "icons/icon.ico"
-      ],
-      "resources": [
-        "icons/gif/*"
       ],
       "identifier": "com.rust.catary",
       "longDescription": "让系统托盘图标动起来",

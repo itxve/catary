@@ -26,7 +26,7 @@ export function set_speed_secs(speed: number = 200) {
 
 export function change_tary(data: Array<number> | string) {
   if (Array.isArray(data)) {
-    invoke("change_tary1", { buffer: { Raw: data } });
+    invoke("change_tary", { buffer: { Raw: data } });
   } else {
     invoke("change_tary", { buffer: { File: data } });
   }

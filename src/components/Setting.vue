@@ -1,10 +1,12 @@
 <template>
   <div>
-    <div style=" display: flex;
+    <div style="
+        display: flex;
         flex-direction: row;
         gap: 20px;
-        flex-wrap: wrap;align-content: center;">
-      <Speed />
+        flex-wrap: wrap;
+      ">
+      <Speed title="速度" />
       <MacosTemplate />
       <GifItemLoad @success="onSuccess" :edit="false" :show="showDialog" @close="onClose" />
       <button style="transform: scale(0.8)" @click="() => (showDialog = true)">
@@ -12,14 +14,7 @@
       </button>
     </div>
 
-
-    <div style="
-        height: 425px;
-        display: flex;
-        flex-direction: row;
-        gap: 8px;
-        flex-wrap: wrap;
-      ">
+    <div style="height: 425px;display: flex;  flex-direction: row; gap: 8px;flex-wrap: wrap; align-content: start;">
       <ListItem :key="item.id" v-for="item in list" :id="item.id" :desc:="item.desc" :isCurrent="item.id == currentRef"
         @del="onSuccess" />
     </div>
