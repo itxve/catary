@@ -13,7 +13,7 @@
           </div>
         </div>
       </div>
-      <button class="save" @click="saveImage">保存</button>
+      <button class="save" style="scale: .8;" @click="saveImage">保存</button>
     </dialog>
   </div>
 </template>
