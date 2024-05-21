@@ -11,6 +11,8 @@
   <img src="./screenshot/image3.png" width="150" height="150" />
   <img src="./screenshot/image2.png"  />
 </p>
+### 注意⚠️⚠️⚠️
+此软件会占用极大的内存 
 
 ### TODOS
 
